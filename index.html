@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Freeflow by Comcast</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Freeflow</h1>
+        <p>A layout engine for Android that decouples layouts from the View containers that manage scrolling and view recycling. FreeFlow makes it really easy to create custom layouts and beautiful transition animations as data and layouts change</p>
+
+        <p class="view"><a href="https://github.com/Comcast/FreeFlow">View the Project on GitHub <small>Comcast/FreeFlow</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Comcast/FreeFlow/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Comcast/FreeFlow/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Comcast/FreeFlow">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="freeflow" class="anchor" href="#freeflow"><span class="octicon octicon-link"></span></a>FreeFlow</h1>
+
+<p>A layout engine for Android that decouples layouts from the View containers that manage scrolling and view recycling. FreeFlow makes it really easy to create custom layouts and beautiful transition animations as layouts are changed.</p>
+
+<p>FreeFlow is a composition based approach to Android Layouts. As opposed to default Android Layouts, FreeFlow Layouts are swappable at runtime which allows views to their new states smoothly. The fundamental difference here is that FreeFlow prefers <a href="http://en.wikipedia.org/wiki/Composition_over_inheritance">Composition over Inheritance</a> which makes the system a lot more adaptable.</p>
+
+<p>Freeflow may be considered in "alpha". You can help in many ways, by reviewing and making suggestions on api's to actually finding bugs and submitting patches via pull requests.</p>
+
+<p>FreeFlow is inspired by UI frameworks like <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/Reference/Reference.html">UICollectionViews on iOS</a> and the <a href="http://www.adobe.com/devnet/flex/articles/flex4_sparkintro.html">Spark Architecture in Flex</a>. </p>
+
+<p><img src="https://raw.github.com/Comcast/FreeFlow/master/examples/Artbook/screenshots/freeflow.png" alt=""></p>
+
+<h1>
+<a name="building-blocks" class="anchor" href="#building-blocks"><span class="octicon octicon-link"></span></a>Building Blocks</h1>
+
+<p>At the basic level, FreeFlow consists of 3 parts:</p>
+
+<ul>
+<li>
+<a href="FreeFlow/src/com/comcast/freeflow/core/FreeFlowContainer.java">FreeFlowContainer</a>: The core class that extends ViewGroup and places all Views inside it</li>
+<li>
+<a href="FreeFlow/src/com/comcast/freeflow/layouts/FreeFlowLayout.java">FreeFlowLayout</a>: The class thats responsible for defining the <a href="http://developer.android.com/reference/android/graphics/Rect.html">Rect</a>'s that the Container will use to position the Views.</li>
+<li>
+<a href="FreeFlow/src/com/comcast/freeflow/animations/FreeFlowLayoutAnimator.java">FreeFlowLayoutAnimator</a>: The animator that will animate the Views when their position Rect's are changed because of a change in the Layout</li>
+<li>
+<a href="FreeFlow/src/com/comcast/freeflow/core/SectionedAdapter.java">SectionedAdapter</a>: The data adapter class that returns the View instances based on the data being rendered. Its modeled very closely to the List Adapters that are used in Android but also understand the concept of "<a href="rc/com/comcast/freeflow/core/Section.java">Section</a>" which might segment data into different parts (For example a user's contacts list may include Sections that hold names beginning with a particular character). </li>
+</ul><p>Additionally there are some helper classes like the <a href="FreeFlow/src/com/comcast/freeflow/animations/DefaultLayoutAnimator.java">DefaultLayoutAnimator</a> that will transition views automatically as they get added, moved or removed and is pretty configurable. FreeFlow comes with some basic Layouts like HLayout, VLayout , HGridLayout and VGridLayout but its easy enough to create custom layouts (see the <a href="examples/Artbook/src/com/comcast/freeflow/examples/artbook/layouts/ArtbookLayout.java">Artbook example's custom layout</a>)</p>
+
+<p>The Artbook example in this repository is a good example of whats possible with FreeFlow. You can download the .apk from the releases tab or see the experience on the video below: </p>
+
+<p><a href="http://www.youtube.com/watch?v=xDd-bcGqLkw"><img src="http://img.youtube.com/vi/xDd-bcGqLkw/0.jpg" alt="Artbook demo project"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Comcast">Comcast</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
