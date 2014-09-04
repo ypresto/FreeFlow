@@ -255,10 +255,13 @@ public class FreeFlowContainer extends AbsLayoutContainer {
 		if (dataSetChanged) {
 			dataSetChanged = false;
 			for (FreeFlowItem item : frames.values()) {
-				if (item.itemIndex >= 0 && item.itemSection >= 0) {
-					mAdapter.getItemView(item.itemSection, item.itemIndex,
-							item.view, this);
-				}
+				if (item.itemSection < 0) continue;
+                if (item.isHeader) {
+                    mAdapter.getHeaderViewForSection(item.itemSection, item.view, this);
+                } else if (item.itemIndex >= 0) {
+                    mAdapter.getItemView(item.itemSection, item.itemIndex,
+                            item.view, this);
+                }
 			}
 		}
 
